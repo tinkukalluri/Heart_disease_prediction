@@ -1253,3 +1253,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 6px;
   margin-top: 30px;
 }
+
+._container {
+  min-height: 72vh !important;
+}
