@@ -1,0 +1,106 @@
+{% extends 'base.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+        <p><h2>Registration</h2></p>
+                <form method="POST" action="{%url 'UserRegisterAction'%}" >
+                {% csrf_token %}
+                <div class="container justify-content-center">
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >Name</span>
+                          <input style="padding:10px" name="name" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >@</span>
+                          <input style="padding:10px" name="loginid" type="text" multiple class="form-control _p-10" placeholder="Username">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >Password</span>
+                          <input style="padding:10px" name="password" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >mobile</span>
+                          <input style="padding:10px" name="mobile" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >email</span>
+                          <input style="padding:10px" name="email" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >locality</span>
+                          <input style="padding:10px" name="locality" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >address</span>
+                          <input style="padding:10px" name="address" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >city</span>
+                          <input style="padding:10px" name="city" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >state</span>
+                          <input style="padding:10px" name="state" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row  mt-3 justify-content-center">
+                  <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >status</span>
+                          <input style="padding:10px" name="status" type="text" multiple class="form-control _p-10" placeholder="">
+                      </div>
+                  </div>
+                  </div>
+                  <input type="submit" class="btn btn-primary" style="display: block;
+                  right: 0;
+                  margin-top:6px;
+                  margin-left: auto;
+                  margin-right: auto;" id="submit" value="submit">
+                </div>
+        </form>
+                {% if messages %}
+                        {% for message in messages %}
+                          <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                    {% endif %}
+            </form>  </p><a style='color:blue' class="nav-link" href="{%url 'UserLogin'%}">User Login</a>
+    </div>
+  </section>
+{%endblock%}

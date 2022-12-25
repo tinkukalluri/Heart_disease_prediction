@@ -1,0 +1,18 @@
+{% extends 'userbase.html'%} {% block contents %}
+<section id="intro">
+  <div class="intro-text" style="display: block">
+    <div class="container p-5 mt-5 bg-dark">
+      {%if result == 1%}
+      <h2 class="text-danger" style="">
+        please take medical attention immediatly!!!
+      </h2>
+      <img
+        src="https://img.etimg.com/thumb/msid-92641778,width-300,height-225,imgsize-16400,,resizemode-75/istock-1131179196.jpg"
+      />
+      {% else %}
+      <h2 class="text-success p-5 mt-5">You're good, Have a good day</h2>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock%}

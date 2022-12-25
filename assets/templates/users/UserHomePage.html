@@ -1,0 +1,144 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+<section id="intro">
+
+    <div class="intro-text" style="display:block;">
+      <p><h3>Please Enter The Data Carefully</h3></p>
+      <form action="{%url 'MLpredicttion'%}" id='form' method="post">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" >Age</span>
+                          <input style="padding:10px" name="age" type="number" multiple class="form-control _p-10" placeholder="Age In Years">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Sex</span>
+                          <input style="padding:10px" name="sex" type="number" multiple class="form-control _p-10" placeholder="1= Male | 0=Female">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Chest pain Type(CP)</span>
+                          <input style="padding:10px"  name="cp" type="number" multiple class="form-control _p-10" placeholder="Min 1 -- max =4">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Resting Blood Pressure(trestbps)</span>
+                          <input style="padding:10px"  name="trestbps" type="number" multiple class="form-control _p-10" placeholder="in mm Hg">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Serum Cholestora(chol)</span>
+                          <input style="padding:10px"  name="chol" type="number" multiple class="form-control _p-10" placeholder="serum cholestoral in mg/dl">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Fasting Blood Sugar(fbs)</span>
+                          <input style="padding:10px"  name="fbs" type="number" multiple class="form-control _p-10" placeholder="(fasting blood sugar > 120 mg/dl) (1 = true; 0 = false)">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Resting Electrocardiographic(restecg)</span>
+                          <input style="padding:10px"  name="restecg" type="number" multiple class="form-control _p-10" placeholder="min=0; max=2">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Maximum Heart Rate Achieved(thalach)</span>
+                          <input style="padding:10px"  name="thalach" type="number" multiple class="form-control _p-10" placeholder="maximum heart rate achieved">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Exercise Induced Angina(exang)</span>
+                          <input style="padding:10px"  name="exang" type="number" multiple class="form-control _p-10" placeholder="exercise induced angina (1 = yes; 0 = no)">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">ST Depression Induced (oldpeak)	</span>
+                          <input style="padding:10px"  name="oldpeak" type="number" multiple class="form-control _p-10" placeholder="ST depression induced by exercise relative to rest">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">The Slope of the Peak(slope)</span>
+                          <input style="padding:10px"  name="slope" type="number" multiple class="form-control _p-10" placeholder="1: upsloping || Value 2: flat || Value 3: downsloping">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Number of Major Vessels(ca)</span>
+                          <input style="padding:10px"  name="ca" type="number" multiple class="form-control _p-10" placeholder="number of major vessels (0-3) colored by flourosopy">
+                      </div>
+              </div>
+            </div>
+            <div class="row  mt-3 justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 ">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Thallium Stress Test (thal)</span>
+                          <input style="padding:10px"  name="thal" type="number" multiple class="form-control _p-10" placeholder="3 = normal; 6 = fixed defect; 7 = reversable defect">
+                      </div>
+              </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+            <div class="col-lg-6 col-md-7 col-sm-8">
+              <select
+                name="ml_algo"
+                class="form-select _p-10 mb-3"
+                id="myCity"
+                aria-label="Default select example"
+                style="padding:10px" 
+              >
+                <option selected>ALGORITHMS | ACCURACY SCORES</option>
+                <option value=1>LOGISTIC REGRESSION | {{acc_scores.score_lr}}%</option>
+                <option value=2>NAIVE BAYES | {{acc_scores.score_nb}}%</option>
+                <option value=3>SVM | {{acc_scores.score_svm}}%</option>
+                <option value=4>K NEAREST NEIGHBORS | {{acc_scores.score_knn}}%</option>
+                <option value=5>DECISION TREE | {{acc_scores.score_dt}}%</option>
+                <option value=6>NEURAL NETWORK | {{acc_scores.score_nn}}%</option>
+              </select>
+              {{form.errors}}
+            </div>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" style="display: block;
+        right: 0;
+        margin-top:6px;
+        margin-left: auto;
+        margin-right: auto;" id="submit" value="submit">
+        </form>
+    </div>
+</section>
+{%endblock%}
